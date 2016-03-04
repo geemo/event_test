@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div">
+        <button id="btn">click</button>
+    </div>
+    <script>
+    var div = document.getElementById('div');
+    div.onclick = function(e){
+    	console.log('div onclick!');
+    };
+
+    var btn = document.getElementById('btn');
+    btn.addEventListener('click', function(e){
+    	console.log('btn onclick_1!');
+    	e.stopImmediatePropagation();
+    });
+    btn.addEventListener('click', function(e){
+    	console.log('btn onclick_2!');
+    });
+    </script>
+</body>
+
+</html>
